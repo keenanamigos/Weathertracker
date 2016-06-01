@@ -15,50 +15,8 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+	<link rel="stylesheet" href="scraper.css">
 </head>
-<style>
-	html, body {
-		height:100%;
-	}
-
-	.container {
-		background-image: url('hdpineapple.jpeg');
-		width: 100%;
-		height: 100%;
-		background-size: cover;
-		background-position: center;
-		padding-top: 150px;
-	}
-	
-	.center {
-		text-align: center;
-	}
-	
-	.white {
-		color:white;
-	}
-	
-	p {
-		padding-top: 15px;
-		padding-bottom: 15px;
-	}
-	
-	button {
-		margin-top: 20px;
-	}
-	
-	.alert {
-		margin-top:20px;
-		display:none;
-	}
-</style>
 <body>
 <div class="container">
 	<div class="row">
@@ -82,24 +40,7 @@
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script>
-	$("#findMyWeather").click(function(event) {
-		event.preventDefault();
-			$(".alert").hide();
-		if ($("#city").val() != "") {
-		
-		$.get("scraper.php?city="+$("#city").val(), function(data) {
-			if (data=="") {
-				$("#fail").fadeIn();
-			} else {
-				$("#success").html(data).fadeIn();
-			}
-		});
-		} else {
-			$("#noCity").fadeIn();
-		
-		}});
-</script>
+<script type="text/javascript" src="scraper.js"></script>
 </body>
 </html>
 
